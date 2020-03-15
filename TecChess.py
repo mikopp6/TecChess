@@ -1,5 +1,5 @@
 from tkinter import *
-
+from tkinter import ttk
 from tkinter import messagebox
 
 main_menu = Tk()
@@ -26,8 +26,20 @@ def settings_clicked():
 def help_clicked():
 	help_menu = Tk()
 	help_menu.title("TecChess - Help")
-	help_menu.geometry("350x800")
-	help_menu.mainloop()
+	
+	treeview = ttk.Treeview(help_menu)
+	treeview.pack()
+
+	with open("helptext.txt", "r", encoding="utf-8") as f:
+		for line in f:
+			if line[0].isdigit():
+				if line[2].isdigit():
+					treeview.insert()
+				else:
+					treeview.insert()
+			else:
+				treeview.insert()
+			
 
 def exit_clicked():
 	if(messagebox.askyesno("Exit","Are you sure?")):
