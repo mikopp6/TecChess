@@ -7,14 +7,17 @@ main_menu.title("TecChess")
 main_menu.geometry("600x600")
 main_menu.configure(bg="white")
 
-image = PhotoImage(file="logo.png")
-label = Label(image=image)
+logo = PhotoImage(file="logo.png")
+label = Label(image=logo)
 label.place(relx=0.5, rely=0.16, anchor=CENTER)
 
 def newgame_clicked():
 	newgame = Tk()
 	newgame.title("TecChess - New game")
 	newgame.geometry("700x500")
+	chessboard = PhotoImage(file="chessboard.png")
+	label = Label(image=chessboard)
+	label.place(relx=0.5, rely=0.16, anchor=CENTER)
 	newgame.mainloop()
 
 def settings_clicked():
@@ -34,15 +37,15 @@ def help_clicked():
 		for line in f:
 			if line[0].isdigit():
 				if line[2].isdigit():
-					treeview.insert()
+					treeview.insert(line[0], line)
 				else:
-					treeview.insert()
+					treeview.insert(line[0], line)
 			else:
-				treeview.insert()
+				treeview.insert(line[0], line)
 			
 
 def exit_clicked():
-	if(messagebox.askyesno("Exit","Are you sure?")):
+	if(messagebox.askyesno("Exit","Are you sure?", parent=main_menu, default="no")):
 		main_menu.destroy()
 
 new_game = Button(main_menu, command=newgame_clicked, text="New game", font=("Emilbus Mono", 25), bg ="white")
