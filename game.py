@@ -9,9 +9,20 @@
 
 import tkinter as tk
 from tkinter import messagebox
-from os import startfile
 import time
+
 from settings import options
+import os, sys, subprocess
+
+def open_file(filename):
+	# Function provides open file -support for multiple operating systems.
+	# User experience may wary depending on other platforms, not fully tested.
+
+    if sys.platform == "win32":
+        os.startfile(filename)
+    else:
+        opener ="open" if sys.platform == "darwin" else "xdg-open"
+        subprocess.call([opener, filename])
 
 def game():
 
@@ -90,7 +101,7 @@ def game():
 		
 		exit_btn = tk.Button(leftframe_frm, command=exit_game_clicked, text="Exit Game", font=("Calibri", 20), bg ="white")
 		exit_btn.grid(row=0, column=0, sticky="W")
-		help_btn = tk.Button(leftframe_frm, command=lambda: startfile("helptext.txt"), text="Help", font=("Calibri", 20), bg ="white")
+		help_btn = tk.Button(leftframe_frm, command=lambda: open_file("helptext.txt"), text="Help", font=("Calibri", 20), bg ="white")
 		help_btn.grid(row=0, column=1, sticky="W")
 
 		return leftframe_frm

@@ -7,7 +7,6 @@
 
 import tkinter as tk
 from tkinter import messagebox
-from os import startfile
 
 import game
 import settings
@@ -37,7 +36,7 @@ newgame_btn.grid(row=1, padx=5, pady=5)
 settings_btn = tk.Button(root, command=settings.settings, text="Settings", font=("Calibri", 30), bg="white")
 settings_btn.grid(row=2, padx=5, pady=5)
 
-help_btn = tk.Button(root, command=lambda: startfile("helptext.txt"), text="Help", font=("Calibri", 30), bg="white")
+help_btn = tk.Button(root, command=lambda: game.open_file("helptext.txt"), text="Help", font=("Calibri", 30), bg="white")
 help_btn.grid(row=3, padx=5, pady=5)
 
 exit_btn = tk.Button(root, command=exit_clicked, text="Exit Game", font=("Calibri", 30), bg="white")
