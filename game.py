@@ -89,7 +89,7 @@ def game():
 		leftframe_frm.grid(row=0, column=0, padx=20, pady=20)
 		
 		exit_btn = tk.Button(leftframe_frm, command=exit_game_clicked, text="Exit Game", font=("Calibri", 20), bg ="white")
-		exit_btn.grid(row=0, column=0, sticky="W")
+		exit_btn.grid(row=0, column=0)
 		help_btn = tk.Button(leftframe_frm, command=lambda: startfile("helptext.txt"), text="Help", font=("Calibri", 20), bg ="white")
 		help_btn.grid(row=0, column=1, sticky="W")
 
