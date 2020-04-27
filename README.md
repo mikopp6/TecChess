@@ -2,7 +2,8 @@ TECCHESS
 
 Chess program, with focus on learning GUI-programming. Current version doesn't have any working game-elements, just the GUI.
 
-Just run main.py, no external libraries should be needed.
+Windows 10:
+Run "python main.py", Tkinter should be included in default python installation.
 
-
-
+Linux and Mac:
+todo 

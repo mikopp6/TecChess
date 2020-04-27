@@ -2,7 +2,7 @@
 # File main.py
 # 
 # Root window for the program, executes the mainloop. All other windows run under this as toplevel windows.
-# Window contains only the logo, and buttons to access different parts of the program.
+# Window contains only the logo and buttons to access different parts of the program.
 #
 
 import tkinter as tk
