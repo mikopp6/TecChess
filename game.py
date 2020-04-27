@@ -10,19 +10,21 @@
 import tkinter as tk
 from tkinter import messagebox
 import time
-
-from settings import options
 import os, sys, subprocess
 
-def open_file(filename):
-	# Function provides open file -support for multiple operating systems.
-	# User experience may wary depending on other platforms, not fully tested.
+from settings import options
 
-    if sys.platform == "win32":
-        os.startfile(filename)
-    else:
-        opener ="open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, filename])
+
+def open_file(filename):
+	# Function provides open file -support for Windows, MacOS and Linux..
+	# Actual user experience may wary depending on plaform, tested only on Windows 10.
+
+	if sys.platform == "win32":
+		os.startfile(filename)
+	elif sys.platform == "darwin":
+		subprocess.call(["open", filename])
+	elif sys.platform == "linux":
+		subprocess.call(["xdg-open", filename])
 
 def game():
 
