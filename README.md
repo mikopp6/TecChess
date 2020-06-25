@@ -1,4 +1,4 @@
-TECCHESS
+# TecChess #
 
 Chess program, with focus on learning GUI-programming. Current version doesn't have any working game-elements, just the GUI.
 
